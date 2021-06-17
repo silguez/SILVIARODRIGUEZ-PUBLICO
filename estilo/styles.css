@@ -145,6 +145,64 @@ border-bottom: 4px solid rgb(93, 173, 248);
     background-color: rgba(255, 255, 255,0.5);
 }
 
+/* modal de la galeria para ampliar imagenes */
+.modal:target{
+  display: block;
+  position:fixed;
+  background: rgba(0,0,0,0.8);
+  top:0;
+  left: 0;  
+  width: 100%;  
+  height: 100%;
+  z-index:2;
+}
+
+.modal {
+  display: none;
+}
+
+.modal h3{
+  color:white;
+  font-size: 30px;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.imagen{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen a {
+  color: white;
+  font-size: 40px;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.imagen img{
+  width: 70%;
+  max-width: 100%;
+}
+
+.cerrar{
+  display: block;
+  background: white;
+  width: 4%;
+  margin:3%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  padding: 5px;
+  border-radius: 50%;
+  line-height: 25px;
+}
+
+/* responsive de header y galeria */
 @media screen and (max-width: 992px) {
   .container{
     width: 100%; 
@@ -156,6 +214,7 @@ border-bottom: 4px solid rgb(93, 173, 248);
     margin: 1%;   
     
   }
+
   header{
     background-color: #221E1B;
     padding: 10px;

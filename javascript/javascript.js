@@ -38,10 +38,22 @@ function miFuncion(xml) {
 
     //actualizo contenido
     contenedor += `<div class='container ${clase}'>
-    <div><h2>${nombre}</h2><br><p>${descripcion}</p></div>
-    <figcaption><b>${pie}</b></figcaption>
-    <img  class='eachPh' src= '${foto}' +  alt='${nombre}'/>
-    </div>`
+                    <div>
+                      <h2>${nombre}</h2><br>
+                        <p>${descripcion}</p>
+                    </div>
+                    <figcaption><b>${pie}</b></figcaption>
+                    <a href='#img${id}'><img  class='eachPh' src='${foto}' +  alt='${nombre}'/></a>
+                  </div>
+
+                    <div class='modal' id='img${id}'>
+                      <h3>${nombre}</h3>
+                      <a href='' class='cerrar'>X</a>
+                      <div class='imagen'>
+                        <a href=''><img src='${foto}' alt='${nombre}'></a>
+                      </div>
+                    </div>`
+             
     elemento = [foto, nombre, pie, descripcion, clase];
     registrados.push(elemento);
   }
@@ -61,34 +73,34 @@ function miFuncion(xml) {
 
 // para cambiar de modo oscuro a claro y viceversa
 
-function modos(){
+function modos() {
   var cuerpo = document.body;
   cuerpo.classList.toggle("bdark");
-  let botonCambio=$("#btn").text();
-  if(botonCambio=='Modo claro'){
+  let botonCambio = $("#btn").text();
+  if (botonCambio == 'Modo claro') {
     $("#btn").text('Modo oscuro');
-  }else{
+  } else {
     $("#btn").text('Modo claro');
   }
 }
 
 // funcion de categorias de imagenes
 
-function categorias(){
-  $(document).ready(function(){
-      $(".categoria").click(function(){
+function categorias() {
+  $(document).ready(function () {
+    $(".categoria").click(function () {
 
-          var filtro = $(this).attr("data-filter");
-          if (filtro == "todos"){
-              $(".container").show(500);
-          }else{
-             $(".container").not("."+filtro).hide(500);
-             $(".container").filter("."+filtro).show(500);
-          }
-      });
+      var filtro = $(this).attr("data-filter");
+      if (filtro == "todos") {
+        $(".container").show(500);
+      } else {
+        $(".container").not("." + filtro).hide(500);
+        $(".container").filter("." + filtro).show(500);
+      }
+    });
 
-      $("button").click(function(){
-        $(this).addClass("active").siblings().removeClass("active");
-      });
+    $("button").click(function () {
+      $(this).addClass("active").siblings().removeClass("active");
+    });
   });
 }
