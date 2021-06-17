@@ -268,7 +268,7 @@ border-bottom: 4px solid rgb(93, 173, 248);
   .colum3{
     width: 28%;
     margin: 5%;
-    text-align: justify;
+    align-items: center;
   }
 
   /* responsive footer y header */
