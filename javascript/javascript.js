@@ -28,7 +28,7 @@ function miFuncion(xml) {
 
   contenedor += "<div class='default'>";
   for (i = 0; i < y.length; i++) {
-    // leo las etiquetas que me interesan del objeto
+    // leo las etiquetas del xml
     id = y[i].getElementsByTagName("id")[0].childNodes[0].nodeValue;
     nombre = y[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue;
     foto = y[i].getElementsByTagName("foto")[0].childNodes[0].nodeValue;
@@ -36,7 +36,7 @@ function miFuncion(xml) {
     descripcion = y[i].getElementsByTagName("descripcion")[0].childNodes[0].nodeValue;
     clase = y[i].getElementsByTagName("clase")[0].childNodes[0].nodeValue;
 
-    //actualizo contenido
+    //añado contenido html para agregar las imagenes usando las variables (xml)
     contenedor += `<div class='container ${clase}'>
                     <div>
                       <h2>${nombre}</h2><br>
@@ -53,7 +53,7 @@ function miFuncion(xml) {
                         <a href=''><img src='${foto}' alt='${nombre}'></a>
                       </div>
                     </div>`
-             
+
     elemento = [foto, nombre, pie, descripcion, clase];
     registrados.push(elemento);
   }
